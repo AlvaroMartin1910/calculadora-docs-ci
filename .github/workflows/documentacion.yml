@@ -1,0 +1,21 @@
+name: Genera la documentacion de manera automatica
+on:
+  workflow_dispatch:
+  push:
+jobs:
+  documentacion:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Obtener repositorio
+        uses: actions/checkout@v7
+
+      - name: Instalar python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Instalar pdoc
+        run: pip install pdoc
+
+      - name: Generar la documentacion
+        run: pdoc calculadora.py -d google -o site
