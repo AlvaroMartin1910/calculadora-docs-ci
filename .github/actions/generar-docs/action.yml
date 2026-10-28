@@ -1,0 +1,20 @@
+name: Accion compuesta para la generacion de la documentacion
+description: Genera automaticamente la documentacion del codigo
+runs:
+  using: composite
+  steps: 
+  - name: Instalar python
+    uses: actions/setup-python@v6
+    with:
+      python-version: "3.12"
+      
+
+  - name: Instalar pdoc
+    shell: bash
+    run: pip install pdoc
+
+  - name: Generar la documentacion
+    shell: bash
+    run: pdoc calculadora.py -d google -o site
+    
+      
