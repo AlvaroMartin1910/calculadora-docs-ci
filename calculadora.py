@@ -2,24 +2,69 @@
 
 
 def sumar(a, b):
+    """Calcula la suma de dos numeros.
+
+        Args:
+            a (float): Primer numero pedido al usuario.
+            b (float): Segundo numero pedido al usuario.
+
+        Returns: 
+            float: La suma de los dos numeros del usuario.
+    """
     return a + b
 
 
 def restar(a, b):
+    """Calcula la resta de dos numeros.
+    
+        Args:
+            a (float): Primer numero pedido al usuario.
+            b (float): Segundo numero pedido al usuario.
+    
+        Returns: 
+            float: La resta de los dos numeros del usuario.
+        """
     return a - b
 
 
 def multiplicar(a, b):
+    """Calcula la multiplicacion de dos numeros.
+    
+        Args:
+            a (float): Primer numero pedido al usuario.
+            b (float): Segundo numero pedido al usuario.
+    
+        Returns: 
+            float: La multiplicacion de los dos numeros del usuario.
+        """
     return a * b
 
 
 def dividir(a, b):
+    """Calcula la division de dos numeros.
+    
+        Args:
+            a (float): Primer numero pedido al usuario.
+            b (float): Segundo numero pedido al usuario.
+    
+        Returns: 
+            float | str : La division de los dos numeros del usuario y Dice al usuario que no se puede dividir entre 0.
+            
+        """
     if b == 0:
         return "No se puede dividir entre cero"
     return a / b
 
 
 def main():
+    """Ejecuta la calculadora en la consola.
+
+    Pide al usuario dos números y vuelve a pedirlos mientras no
+    introduzca un valor numérico válido. Después pide la operación
+    (+, -, * o /), llama a la función correspondiente y muestra el
+    resultado por pantalla. Si la operación no es válida, muestra
+    un mensaje de aviso.
+    """
     print("=== Calculadora ===")
     print("Operaciones disponibles: +  -  *  /")
 
