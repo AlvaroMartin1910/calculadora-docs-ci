@@ -16,18 +16,10 @@ jobs:
     steps:
       - name: Obtener repositorio
         uses: actions/checkout@v7
-
-      - name: Instalar python
-        uses: actions/setup-python@v6
-        with:
-          python-version: "3.12"
-
-      - name: Instalar pdoc
-        run: pip install pdoc
-
-      - name: Generar la documentacion
-        run: pdoc calculadora.py -d google -o site
-
+        
+      - name: Instalar python, pdoc y generar la documentacion
+        uses: ./.github/actions/generar-docs
+        
       - name: Subir la documentacion
         uses: actions/upload-pages-artifact@v5
         with:
